@@ -1,6 +1,9 @@
 ---
 project_user: skeleton
 
+config_path: "{{project_dir}}/config"
+
 db_name: skeleton
 db_user: "{{project_user}}"
 db_host: localhost
+db_config_path: "{{config_path}}"
