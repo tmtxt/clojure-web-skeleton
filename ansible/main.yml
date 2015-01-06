@@ -8,3 +8,5 @@
     - postgres
     - virtualenv
     - schemup
+    - java
+    - clojure
