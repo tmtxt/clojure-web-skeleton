@@ -1,0 +1,6 @@
+---
+project_user: skeleton
+
+db_name: skeleton
+db_user: "{{project_user}}"
+db_host: localhost
