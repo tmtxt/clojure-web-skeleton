@@ -10,3 +10,6 @@
     - schemup
     - java
     - clojure
+
+  tasks:
+    - include: tasks/upstart.yml

@@ -1,0 +1,6 @@
+---
+- name: create upstart config folder
+  file: path=~/.init state=directory
+
+- name: create upstart job file
+  template: src=templates/ring-server.conf dest=~/.init/ring-server.conf
