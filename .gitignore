@@ -1,3 +1,4 @@
-/config/db.json
+/resources/config/db.json
 /.vagrant/*
 /target/*
+
