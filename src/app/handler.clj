@@ -24,4 +24,5 @@
               app-routes)
       (handler/site)
       (wrap-base-url)
-      (session/wrap-noir-session {:store (memory-store)})))
+      (session/wrap-noir-session {:store (memory-store)})
+      (wrap-noir-validation)))
