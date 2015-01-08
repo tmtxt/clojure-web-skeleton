@@ -3,11 +3,11 @@
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/tools.nrepl "0.2.5"]
-                 [compojure "1.1.6"]
+                 [org.clojure/tools.nrepl "0.2.6"]
+                 [compojure "1.3.1"]
                  [hiccup "1.0.5"]
                  [ring-server "0.3.1"]
-                 [selmer "0.7.8"]]
+                 [selmer "0.7.9"]]
 
   :plugins [[lein-ring "0.8.12"]]
 
@@ -23,6 +23,6 @@
    {:ring
     {:open-browser? false, :stacktraces? false, :auto-reload? false}}
    :dev
-   {:dependencies [[ring-mock "0.1.5"] [ring/ring-devel "1.3.1"]]
+   {:dependencies [[ring-mock "0.1.5"] [ring/ring-devel "1.3.2"]]
     :ring
     {:open-browser? false}}})
