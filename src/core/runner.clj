@@ -1,6 +1,7 @@
 (ns core.runner
   (:require [app.repl :as web-server]
-            [clojure.tools.nrepl.server :as repl-server]))
+            [clojure.tools.nrepl.server :as repl-server]
+            [app.db.connection :as connection]))
 
 (def nrepl-port 7888)
 
