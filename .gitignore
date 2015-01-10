@@ -2,3 +2,4 @@
 /.vagrant/*
 /target/*
 /scripts/ring-server.sh
+/logs/*
