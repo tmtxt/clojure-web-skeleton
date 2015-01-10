@@ -8,7 +8,8 @@
                  [hiccup "1.0.5"]
                  [ring-server "0.3.1"]
                  [selmer "0.7.9"]
-                 [lib-noir "0.9.5"]]
+                 [lib-noir "0.9.5"]
+                 [korma "0.4.0"]]
 
   :plugins [[lein-ring "0.8.12"]]
 
