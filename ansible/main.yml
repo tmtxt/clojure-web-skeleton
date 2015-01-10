@@ -12,6 +12,11 @@
     - clojure
 
   tasks:
+    - name: generate db.clj config
+      sudo: yes
+      sudo_user: "{{project_user}}"
+      template: src=templates/db_config.clj dest={{project_dir}}/src/app/db/config.clj
+
     - name: install leiningen dependencies
       sudo: yes
       sudo_user: "{{project_user}}"

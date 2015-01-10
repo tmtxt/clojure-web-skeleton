@@ -3,4 +3,5 @@
 /target/*
 /scripts/ring-server.sh
 /logs/*
+/src/app/db/config.clj
 .lein-repl-history
