@@ -1,0 +1,10 @@
+{{project_dir}}/logs/*.log {
+    daily
+    minsize 10M
+    rotate 7
+    create
+    compress
+    delaycompress
+    dateext
+    sharedscripts
+}

@@ -26,3 +26,9 @@
       template: >-
         src=templates/ring-server.conf
         dest=/etc/init/{{service_prefix}}-ring-server.conf
+
+    - name: create logrotate config
+      sudo: yes
+      template: >-
+        src=templates/logrotate
+        dest=/etc/logrotate.d/{{service_prefix}}
