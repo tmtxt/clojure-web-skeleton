@@ -8,4 +8,4 @@
   [& args]
   (web-server/start-server "3000")
   (repl-server/start-server :port nrepl-port)
-  (print (str "nRepl server running on port " nrepl-port)))
+  (println (str "nRepl server running on port " nrepl-port)))
