@@ -1,4 +1,4 @@
-/resources/config/db.json
+/config/db.json
 /.vagrant/*
 /target/*
 /scripts/ring-server.sh

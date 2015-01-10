@@ -3,7 +3,7 @@ project_user: skeleton
 
 service_prefix: skeleton
 
-config_path: "{{project_dir}}/resources/config"
+config_path: "{{project_dir}}/config"
 
 db_name: skeleton
 db_user: "{{project_user}}"
