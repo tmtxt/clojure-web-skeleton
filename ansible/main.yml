@@ -23,6 +23,8 @@
 
     - name: create server service
       sudo: yes
+      notify:
+        - restart ring server
       template: >-
         src=templates/ring-server.conf
         dest=/etc/init/{{service_prefix}}-ring-server.conf
@@ -32,3 +34,8 @@
       template: >-
         src=templates/logrotate
         dest=/etc/logrotate.d/{{service_prefix}}
+
+  handlers:
+    - name: restart ring server
+      sudo: yes
+      service: name={{service_prefix}}-ring-server state=restarted
