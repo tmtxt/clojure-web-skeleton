@@ -13,6 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # port forwarding
   config.vm.network :forwarded_port, guest: 8080, host: 9250
   config.vm.network :forwarded_port, guest: 3000, host: 9251
+  config.vm.network :forwarded_port, guest: 7888, host: 9252
 
   # provision
   config.vm.provision "ansible" do |ansible|
