@@ -1,6 +1,8 @@
 ---
 project_user: skeleton
 
+service_prefix: skeleton
+
 config_path: "{{project_dir}}/resources/config"
 
 db_name: skeleton

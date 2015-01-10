@@ -12,4 +12,17 @@
     - clojure
 
   tasks:
-    - include: tasks/upstart.yml
+    - name: create server script template
+      sudo: yes
+      sudo_user: "{{project_user}}"
+      template: >-
+        src=templates/ring-server.sh
+        dest={{project_dir}}/scripts/ring-server.sh
+        mode=755
+        owner={{project_user}}
+
+    - name: create server service
+      sudo: yes
+      template: >-
+        src=templates/ring-server.conf
+        dest=/etc/init/{{service_prefix}}-ring-server.conf
