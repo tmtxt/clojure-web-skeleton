@@ -12,6 +12,12 @@
     - clojure
 
   tasks:
+    - name: install leiningen dependencies
+      sudo: yes
+      sudo_user: "{{project_user}}"
+      command: lein run -m core.installer chdir={{project_dir}}
+      changed_when: False
+
     - name: create server script template
       sudo: yes
       sudo_user: "{{project_user}}"
