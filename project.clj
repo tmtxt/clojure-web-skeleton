@@ -11,6 +11,7 @@
                  [lib-noir "0.9.5"]
                  [korma "0.4.0"]
                  [org.postgresql/postgresql "9.3-1100-jdbc41"]
+                 [org.clojure/tools.cli "0.3.1"]
                  [log4j "1.2.15" :exclusions [javax.mail/mail
                                               javax.jms/jms
                                               com.sun.jdmk/jmxtools
