@@ -1,0 +1,3 @@
+[submodule "ansible/roles"]
+	path = ansible/roles
+	url = https://github.com/tmtxt/ansible-roles.git
