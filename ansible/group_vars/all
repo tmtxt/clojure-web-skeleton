@@ -9,3 +9,8 @@ db_name: skeleton
 db_user: "{{project_user}}"
 db_host: localhost
 db_config_path: "{{config_path}}"
+
+nvm:
+  user: "{{project_user}}"
+  version: v0.22.1
+  node_version: 0.11.14
