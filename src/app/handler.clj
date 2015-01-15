@@ -6,7 +6,7 @@
             [hiccup.middleware :refer [wrap-base-url]]
             [compojure.handler :as handler]
             [compojure.route :as route]
-            [app.routes.home :refer [home-routes]]
+            [app.controllers.home :refer [home-routes]]
             [noir.session :as session]
             [noir.validation :as validation]))
 

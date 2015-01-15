@@ -1,4 +1,4 @@
-(ns app.routes.home
+(ns app.controllers.home
   (:require [compojure.core :refer :all]
             [app.views.layout :as layout]
             [selmer.parser :refer [render-file render]]
