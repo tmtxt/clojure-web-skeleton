@@ -66,7 +66,7 @@ detail information about what variables can be overwritten
 # 3. Models
 
 Models are defined in `src/app/models`. Model files use
-[Korma](http://sqlkorma.com/docs) be default (but you can you whatever ORM that
+[Korma](http://sqlkorma.com/docs) by default (but you can you whatever ORM that
 you want).
 
 To generate a basic model file
