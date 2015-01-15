@@ -1,6 +1,9 @@
 (ns app.models.{{name}}
     (:use [korma.core]))
 
+;;; Basic Korma model structure
+;;; see more at http://sqlkorma.com/docs
+
 (defentity users
   ;; Basic configuration
 
@@ -11,38 +14,33 @@
   (table :{{name}})
   {% endif %}
 
-  ;; by default "id". This line is unnecessary.
-  ;; it's used for relationships joins.
+  ;; Primary key, by default "id"
+  ;; This line is unnecessary, it's used for relationships joins.
+  {% if primary-key %}
+  (pk :{{primary-key}})
+  {% else %}
   (pk :id)
-  (database db) ;; if none is specified the last defdb
-  ;; will be used. Also unnecessary.
-  (entity-fields :first :last) ;; default fields for selects
+  {% endif %}
 
-  ;; Mutations
-  (prepare (fn [{last :last :as v}]
-             (if last
-               (assoc v :last (str/upper-case last)) v)))
-  ;; apply a function before storing in the db
-  ;; in this case the function changes the "last" field
-  ;; to upper case.
-  (transform (fn [{first :first :as v}]
-               (if first
-                 (assoc v :first (str/capitalize first)) v)))
-  ;; apply a function to all select results
-  ;; in this case the function changes the "first" field
-  ;; to capitalized.
+  ;; Default fields for selects
+  ;; (entity-fields :column1 :column2)
 
-  ;; Relationships
-  (has-one address)
+  ;; Relationships, uncomment or add more as necessary
+
   ;; assumes users.id = address.users_id
-  (has-many email)
+  ;; (has-one address)
+
   ;; assumes users.id = email.users_id
   ;; but gets the results in a second query
   ;; for each element
-  (belongs-to account)
+  ;; (has-many email)
+
   ;; assumes users.account_id = account.id
-  (many-to-many posts :users_posts))
-;; assumes a table users_posts with columns users_id
-;; and posts_id
-;; like has-many, also gets the results in a second
-;; query for each element
+  ;; (belongs-to account)
+
+  ;; assumes a table users_posts with columns users_id
+  ;; and posts_id
+  ;; like has-many, also gets the results in a second
+  ;; query for each element
+  ;; (many-to-many posts :users_posts)
+  )

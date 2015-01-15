@@ -5,7 +5,8 @@
 
 (def cli-options
   [["-n" "--name NAME" "Model Name"]
-   ["-t" "--table TABLE" "Table Name"]])
+   ["-t" "--table TABLE" "Table Name"]
+   ["-p" "--primary-key PK" "Primary key column"]])
 
 (defn exit [status msg]
   (println msg)
