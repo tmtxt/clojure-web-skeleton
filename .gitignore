@@ -5,3 +5,4 @@
 /logs/*
 /src/app/db/config.clj
 .lein-repl-history
+.lein-env

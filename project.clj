@@ -10,6 +10,7 @@
                  [selmer "0.7.9"]
                  [lib-noir "0.9.5"]
                  [korma "0.4.0"]
+                 [environ "1.0.0"]
                  [org.postgresql/postgresql "9.3-1100-jdbc41"]
                  [org.clojure/tools.cli "0.3.1"]
                  [org.clojure/tools.logging "0.3.1"]
@@ -18,7 +19,8 @@
                                               com.sun.jdmk/jmxtools
                                               com.sun.jmx/jmxri]]]
 
-  :plugins [[lein-ring "0.8.12"]]
+  :plugins [[lein-ring "0.8.12"]
+            [lein-environ "1.0.0"]]
 
   :ring {:handler app.handler/app
          :init app.handler/init
@@ -28,10 +30,16 @@
 
   :profiles
   {:uberjar {:aot :all}
+
    :production
    {:ring
-    {:open-browser? false, :stacktraces? false, :auto-reload? false}}
+    {:open-browser? false, :stacktraces? false, :auto-reload? false}
+    :env
+    {:someconfig "production"}}
+
    :dev
    {:dependencies [[ring-mock "0.1.5"] [ring/ring-devel "1.3.2"]]
     :ring
-    {:open-browser? false}}})
+    {:open-browser? false}
+    :env
+    {:someconfig "dev"}}})
