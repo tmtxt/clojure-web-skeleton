@@ -21,15 +21,12 @@
 (defn generate-model [options]
   (let [content (parser/render-file "templates/clj/models/sample_model.clj" options)]
     (spit (str "src/app/models/" (:name options) ".clj") content)
-    (println content)))
+    (exit 0 (str "Model " (:name options) " generated successfully"))))
 
 (defn -main
   [& args]
   (let [opts (parse-opts args cli-options)
         options (:options opts)
         errors (:errors opts)]
-
-    (println opts)
-
     (validate options errors)
     (generate-model options)))
