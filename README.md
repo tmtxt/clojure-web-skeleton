@@ -93,7 +93,8 @@ need to add the route to `app.handler` (in def app)
 Views are defined using
 [Selmer](https://github.com/yogthos/Selmer) (a Django inspired template system)
 and are located under `resources/templates`. The namespace `app.views.layout`
-contains some helper function for rendering view (`render` function).
+contains some helper function for rendering view (`render` function). Of course,
+you can use any template library that you want
 
 ```
 (render "home/index.html" {:name "some arguments"})
@@ -102,3 +103,32 @@ contains some helper function for rendering view (`render` function).
 **Note**: the `clj` folder under `templates` directory contains some templates
   for generating clojure code files (like models, controllers). You should not
   use this folder for rendering web page template.
+
+# 6. Static files
+
+Static files are located under `resources/public`
+
+# 7. Logging
+
+The skeleton uses [Clojure Logging](https://github.com/clojure/tools.logging)
+with **Log4j** behind it by default.
+
+```
+(ns example.app
+  (:require [clojure.tools.logging :as log]))
+
+;; increasing level of severe
+(log/trace "some string")
+(log/debug "some string")
+(log/info "some string")
+(log/warn "some string")
+(log/error "some string")
+(log/fatal "some string")
+```
+
+By default, all the output sent to stdout will be redirected to
+`logs/ring-server.log` and the log you call with **Clojure Logging** (with log4j
+by default) will be appended to `logs/log4j.log`. You can config log4j for
+specific namespace in `src/log4j.xml`. See more about the log4j XML structure
+here
+[http://wiki.apache.org/logging-log4j/Log4jXmlFormat](http://wiki.apache.org/logging-log4j/Log4jXmlFormat).
