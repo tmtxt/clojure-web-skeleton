@@ -82,3 +82,23 @@ $ lein run -m core.modelgen --name NAME --table TABLE --primary-key PK
 - NAME: name of the model to generate (compulsory)
 - TABLE: the corresponding table (optionally, default to NAME)
 - PK: the primary key column (optionally, default to `id`)
+
+# 4. Routing / Controllers
+
+Controllers/Routes are defined in `src/app/controllers`. After `defroute`, you
+need to add the route to `app.handler` (in def app)
+
+# 5. Views
+
+Views are defined using
+[Selmer](https://github.com/yogthos/Selmer) (a Django inspired template system)
+and are located under `resources/templates`. The namespace `app.views.layout`
+contains some helper function for rendering view (`render` function).
+
+```
+(render "home/index.html" {:name "some arguments"})
+```
+
+**Note**: the `clj` folder under `templates` directory contains some templates
+  for generating clojure code files (like models, controllers). You should not
+  use this folder for rendering web page template.
