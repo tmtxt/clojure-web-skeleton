@@ -67,7 +67,7 @@ detail information about what variables can be overwritten
 
 Models are defined in `src/app/models`. Model files use
 [Korma](http://sqlkorma.com/docs) by default (but you can you whatever ORM that
-you want).
+you want, just include the dependencies in `project.clj`).
 
 To generate a basic model file
 
