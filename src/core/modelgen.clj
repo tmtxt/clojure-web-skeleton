@@ -1,7 +1,7 @@
 (ns core.modelgen
   (:require [clojure.tools.cli :refer [parse-opts]]
             [selmer.parser :as parser]
-            [clojure.string :as str]))
+            [clojure.string :as cljstr]))
 
 (def cli-options
   [["-n" "--name NAME" "Model Name"]
@@ -14,13 +14,14 @@
 
 (defn validate [options errors]
   (cond
-   errors (exit 1 (str/join "\n" errors)),
+   errors (exit 1 (cljstr/join "\n" errors)),
    (not (:name options)) (exit 1 "Please input model name"),
    :else true))
 
 (defn generate-model [options]
-  (println (parser/render-file "templates/clj/models/sample_model.clj" options))
-  )
+  (let [content (parser/render-file "templates/clj/models/sample_model.clj" options)]
+    (spit (str "src/app/models/" (:name options) ".clj") content)
+    (println content)))
 
 (defn -main
   [& args]
