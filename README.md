@@ -132,3 +132,31 @@ by default) will be appended to `logs/log4j.log`. You can config log4j for
 specific namespace in `src/log4j.xml`. See more about the log4j XML structure
 here
 [http://wiki.apache.org/logging-log4j/Log4jXmlFormat](http://wiki.apache.org/logging-log4j/Log4jXmlFormat).
+
+# 8. Environment Variables
+
+Environment variables are defined in `project.clj` file and can be retrieved
+using [Environ](https://github.com/weavejester/environ) as follow
+
+- project.clj
+
+```
+(defproject
+  ...
+  :profiles
+  {:production
+   {:env
+    {:someconfig "production"}}
+
+   :dev
+   {:env
+    {:someconfig "dev"}}})
+```
+
+- to get it
+
+```
+(require '[environ.core :refer [env]])
+
+(env :database-url)
+```
