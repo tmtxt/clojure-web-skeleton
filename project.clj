@@ -30,6 +30,12 @@
 
   :main core.runner
 
+  :cljsbuild
+  {:builds [{:source-paths ["cljs"]
+             :compiler {:output-to "resources/public/cljs/main.js"
+                        :optimizations :whitespace
+                        :pretty-print true}}]}
+
   :profiles
   {:uberjar {:aot :all}
 
