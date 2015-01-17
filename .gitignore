@@ -6,3 +6,4 @@
 /src/app/db/config.clj
 .lein-repl-history
 .lein-env
+/resources/public/cljs/*
