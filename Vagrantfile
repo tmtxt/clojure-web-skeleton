@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   # config
+  project_name = "skeleton"
   project_user = "vagrant"
 
   # port forwarding
@@ -20,10 +21,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.playbook = "ansible/main.yml"
 
     ansible.extra_vars = {
+      # general
+      project_name: project_name,
       project_user: project_user,
-      vagrant_env: true,
       project_dir: "/vagrant",
-      db_password: "vagrant"
+
+      # db
+      db_name: project_user,
+      db_user: project_user,
+      db_password: "vagrant",
+
+      # vagrant specific
+      vagrant_env: true
     }
   end
 end
