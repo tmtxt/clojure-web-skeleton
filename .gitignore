@@ -7,3 +7,5 @@
 .lein-repl-history
 .lein-env
 /resources/public/cljs/*
+/out/*
+/repl/*
