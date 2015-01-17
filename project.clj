@@ -31,10 +31,22 @@
   :main core.runner
 
   :cljsbuild
-  {:builds [{:source-paths ["cljs"]
+  {:builds {:dev
+            {:source-paths ["cljs"]
+             :incremental true
              :compiler {:output-to "resources/public/cljs/main.js"
+                        :source-map "resources/public/cljs/main.js.map"
+                        :output-dir "resources/public/cljs"
+                        :warnings true
                         :optimizations :whitespace
-                        :pretty-print true}}]}
+                        :pretty-print true}}
+
+            :production
+            {:source-paths ["cljs"]
+             :incremental true
+             :compiler {:output-to "resources/public/cljs/main.js"
+                        :optimizations :advanced
+                        :pretty-print false}}}}
 
   :profiles
   {:uberjar {:aot :all}
