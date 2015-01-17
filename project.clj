@@ -45,6 +45,7 @@
             {:source-paths ["cljs"]
              :incremental true
              :compiler {:output-to "resources/public/cljs/main.js"
+                        :externs ["cljs/externs.js"]
                         :optimizations :advanced
                         :pretty-print false}}}}
 
