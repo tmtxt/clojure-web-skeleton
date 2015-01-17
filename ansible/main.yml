@@ -12,6 +12,11 @@
     - clojure
 
   tasks:
+    # create necessary directory
+    - name: create out dirs
+      file: path={{item}} state=directory
+      with_items: out_dirs
+
     - name: generate db.clj config
       sudo: yes
       sudo_user: "{{project_user}}"

@@ -14,3 +14,10 @@ nvm:
   user: "{{project_user}}"
   version: v0.22.1
   node_version: 0.11.14
+
+# folder for log files, build files,...
+out_dirs:
+  - "{{project_dir}}/logs"                  # log dir
+  - "{{project_dir}}/resources/public/cljs" # cljs build dir
+  - "{{project_dir}}/target"                # clj build dir
+  - "{{project_dir}}/scripts"               # script dir
