@@ -4,7 +4,7 @@
 ;;; Basic Korma model structure
 ;;; see more at http://sqlkorma.com/docs
 
-(defentity users
+(defentity {{name}}
   ;; Basic configuration
 
   ;; Table, by default the name of the entity
