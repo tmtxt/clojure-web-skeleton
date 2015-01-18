@@ -28,6 +28,7 @@
          :destroy app.handler/destroy}
 
   :main core.runner
+  :jvm-opts ["-Xmx1g"]
 
   :cljsbuild
   {:builds {:dev
