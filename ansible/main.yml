@@ -51,6 +51,13 @@
         src=templates/logrotate
         dest=/etc/logrotate.d/{{service_prefix}}
 
+    - name: compile cljs
+      sudo: yes
+      sudo_user: "{{project_user}}"
+      command: lein cljsbuild once production
+      args:
+        chdir: "{{project_dir}}"
+
   handlers:
     - name: restart ring server
       sudo: yes
