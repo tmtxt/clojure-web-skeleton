@@ -17,11 +17,11 @@ db_name: "{{project_name}}"
 db_user: "{{project_user}}"
 db_host: localhost
 db_password: somepassword
-db_schemup: True
-db_schemup_path: "{{project_dir}}/schema"
+
+# schemup
+schemup_user: "{{project_user}}"
+schemup_path: "{{project_dir}}/schema"
 
 # nvm
-nvm:
-  user: "{{project_user}}"
-  version: v0.22.1
-  node_version: 0.11.14
+nvm_user: "{{project_user}}"
+nvm_node_version: 0.11.14
