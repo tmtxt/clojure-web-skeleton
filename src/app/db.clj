@@ -1,7 +1,7 @@
-(ns app.db.connection
+(ns app.db
   (:use [korma.db]
         [korma.core])
-  (:require [app.db.config :as config]))
+  (:require [genconfig.db :as config]))
 
 ;;; def db
 (defdb app-db config/db)

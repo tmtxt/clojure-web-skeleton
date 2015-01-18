@@ -9,3 +9,4 @@
 /resources/public/cljs/*
 /out/*
 /repl/*
+/src/genconfig/*
