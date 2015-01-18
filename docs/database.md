@@ -54,3 +54,5 @@ $ schemup commit
 Importing migrations/tbl_user.yaml
 Importing migrations/tbl_user_image.yaml
 ```
+
+Of course, you can install and use any migration tool that you want

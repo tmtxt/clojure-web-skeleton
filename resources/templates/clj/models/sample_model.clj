@@ -8,19 +8,11 @@
   ;; Basic configuration
 
   ;; Table, by default the name of the entity
-  {% if table %}
-  (table :{{table}})
-  {% else %}
-  (table :{{name}})
-  {% endif %}
+  {% if table %}(table :{{table}}){% else %}(table :{{name}}){% endif %}
 
   ;; Primary key, by default "id"
   ;; This line is unnecessary, it's used for relationships joins.
-  {% if primary-key %}
-  (pk :{{primary-key}})
-  {% else %}
-  (pk :id)
-  {% endif %}
+  {% if primary-key %}(pk :{{primary-key}}){% else %}(pk :id){% endif %}
 
   ;; Default fields for selects
   ;; (entity-fields :column1 :column2)
