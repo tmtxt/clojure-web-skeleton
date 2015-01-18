@@ -10,6 +10,7 @@ out_dirs:
   - "{{project_dir}}/resources/public/cljs" # cljs build dir
   - "{{project_dir}}/target"                # clj build dir
   - "{{project_dir}}/scripts"               # script dir
+  - "{{project_dir}}/src/genconfig"         # clj config
 
 # database
 db_name: "{{project_name}}"
