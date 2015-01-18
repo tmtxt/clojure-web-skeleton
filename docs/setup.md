@@ -2,7 +2,7 @@
 
 - [VirtualBox](https://www.virtualbox.org/ )
 - [Vagrant](https://www.vagrantup.com/ )
-- [Ansible](http://www.ansible.com/home )
+- [Ansible](http://www.ansible.com/home ) 1.8.2+
 
 # Up and running
 
@@ -19,13 +19,6 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-- Start as upstart service, all the output from stdout will be redirected to
-  `logs/ring-server.log`. Use this for production server
-
-```
-$ sudo service skeleton-ring-server start
-```
-
 - Start it manually, used for development
 
 ```
@@ -34,3 +27,10 @@ $ lein run
 
 By default, the server will run on port 3000, which is forwarded to 9251 in host
 machine.
+
+- Start as upstart service, all the output from stdout will be redirected to
+  `logs/ring-server.log`. Use this for production server
+
+```
+$ sudo service skeleton-ring-server start
+```
