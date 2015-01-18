@@ -10,3 +10,4 @@
 /out/*
 /repl/*
 /src/genconfig/*
+*.log
