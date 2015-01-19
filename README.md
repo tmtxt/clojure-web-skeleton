@@ -22,3 +22,8 @@ Documentation is located under docs folder, you should read them in this order
 - [Static Files](https://github.com/tmtxt/clojure-web-skeleton/blob/master/docs/static.md)
 - [Logging](https://github.com/tmtxt/clojure-web-skeleton/blob/master/docs/logging.md)
 - [Environment Variables](https://github.com/tmtxt/clojure-web-skeleton/blob/master/docs/environment.md)
+
+# Note
+
+If you are running a VPS with less than 1GB of RAM, probably you need to setup
+swap for using when compilation.
