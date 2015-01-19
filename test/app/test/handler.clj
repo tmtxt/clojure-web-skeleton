@@ -1,4 +1,4 @@
-(ns skeleton.test.handler
+(ns app.test.handler
   (:use clojure.test
         ring.mock.request
         skeleton.handler))
