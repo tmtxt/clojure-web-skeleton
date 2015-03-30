@@ -11,3 +11,5 @@
 /repl/*
 /src/genconfig/*
 *.log
+/src/config/db.clj
+
