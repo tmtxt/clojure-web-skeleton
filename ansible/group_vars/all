@@ -20,6 +20,7 @@ db_password: somepassword
 
 # virtualenv
 virtualenv_user: "{{project_user}}"
+virtualenv_path: "~"
 
 # schemup
 schemup_user: "{{project_user}}"
