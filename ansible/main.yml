@@ -9,7 +9,7 @@
     - wget
     - virtualenv
     - schemup
-    - java
+    - openjdk
     - clojure
 
   tasks:
