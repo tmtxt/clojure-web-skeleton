@@ -1,4 +1,4 @@
-{{project_dir}}/logs/*.log {
+{{log_dir}}/*.log {
     daily
     minsize 10M
     rotate 7

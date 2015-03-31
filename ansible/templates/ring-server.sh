@@ -1,1 +1,1 @@
-sudo -u {{project_user}} lein with-profile production run >> {{project_dir}}/logs/ring-server.log
+sudo -u {{project_user}} lein with-profile production run >> {{log_dir}}/ring-server.log
