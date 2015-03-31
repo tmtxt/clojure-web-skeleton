@@ -1,0 +1,13 @@
+---
+table: tbl_user
+from: null
+to: txt_1
+sql: |
+  CREATE TABLE tbl_user (
+    id SERIAL NOT NULL PRIMARY KEY,
+    full_name TEXT,
+    email TEXT,
+    password TEXT,
+    created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),
+    UNIQUE(email)
+  );
