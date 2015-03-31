@@ -36,7 +36,7 @@
       sudo_user: "{{project_user}}"
       template: >-
         src=templates/ring-server.sh
-        dest={{project_dir}}/scripts/ring-server.sh
+        dest={{script_dir}}/ring-server.sh
         mode=755
         owner={{project_user}}
 

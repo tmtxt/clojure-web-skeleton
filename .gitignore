@@ -1,7 +1,7 @@
 /schema/db.json
 /.vagrant/*
 /target/*
-/scripts/ring-server.sh
+/scripts/*
 /logs/*
 /src/app/db/config.clj
 .lein-repl-history
