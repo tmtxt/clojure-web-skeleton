@@ -18,6 +18,9 @@ db_user: "{{project_user}}"
 db_host: localhost
 db_password: somepassword
 
+# virtualenv
+virtualenv_user: "{{project_user}}"
+
 # schemup
 schemup_user: "{{project_user}}"
 schemup_path: "{{project_dir}}/schema"
