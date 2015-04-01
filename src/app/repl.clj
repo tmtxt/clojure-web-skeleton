@@ -1,7 +1,9 @@
 (ns app.repl
   (:use app.handler
         ring.server.standalone
-        [ring.middleware file-info file]))
+        [ring.middleware file-info file])
+  (:require [clojure.tools.nrepl.server :as repl-server]
+            [config.main :refer [config]]))
 
 (defonce server (atom nil))
 
@@ -19,7 +21,7 @@
 (defn start-server
   "used for starting the server in development mode from REPL"
   [& [port]]
-  (let [port (if port (Integer/parseInt port) 8080)]
+  (let [port (if port (Integer/parseInt port) (config :ring-port))]
     (reset! server
             (serve (get-handler)
                    {:port port
@@ -33,3 +35,7 @@
 (defn stop-server []
   (.stop @server)
   (reset! server nil))
+
+(defn start-repl []
+  (repl-server/start-server :port (config :nrepl-port))
+  (println (str "nRepl server running on port " (config :nrepl-port))))
