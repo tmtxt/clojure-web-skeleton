@@ -1,16 +1,9 @@
 ---
 - hosts: all
+  sudo: yes
   roles:
     - apt
-    - user
-    - git
-    - nvm
-    - postgres
-    - wget
-    - virtualenv
-    - schemup
-    - oraclejdk
-    - clojure
+    - docker_ubuntu
 
   tasks:
     # create necessary directory
