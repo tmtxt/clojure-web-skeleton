@@ -10,12 +10,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config
   project_name = "skeleton"
   project_user = "vagrant"
+  db_port = 54321
 
   # port forwarding
   config.vm.network :forwarded_port, guest: 8080, host: 9250
   config.vm.network :forwarded_port, guest: 3000, host: 9251
   config.vm.network :forwarded_port, guest: 7888, host: 9252
   config.vm.network :forwarded_port, guest: 9000, host: 9253
+  config.vm.network :forwarded_port, guest: db_port, host: 54322
 
   # provision
   config.vm.provision "ansible" do |ansible|
@@ -31,6 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       db_name: project_user,
       db_user: project_user,
       db_password: "vagrant",
+      db_port: db_port,
 
       # vagrant specific
       vagrant_env: true

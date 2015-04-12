@@ -4,18 +4,9 @@
   roles:
     - apt
     - docker_ubuntu
+    - postgres_docker
 
   tasks:
-    - name: postgres container
-      docker:
-        name: some-postgres
-        image: postgres:9.4.1
-        state: restarted
-        ports:
-          - "54321:5432"
-        env:
-          POSTGRES_PASSWORD: 123456
-
     # create necessary directory
     # - name: create out dirs
   #     sudo: yes
