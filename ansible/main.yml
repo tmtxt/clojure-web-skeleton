@@ -3,6 +3,9 @@
   sudo: yes
   roles:
     - apt
+    - user
+    - git
+    - postgres_client
     - docker_ubuntu
     - postgres_docker
 
