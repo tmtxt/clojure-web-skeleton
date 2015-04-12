@@ -14,10 +14,16 @@ out_dirs:
   - "{{project_dir}}/src/config"            # clj config
 
 # database
-db_name: "{{project_name}}"
-db_user: "{{project_user}}"
+db_name: postgres
+db_user: postgres
 db_host: localhost
 db_password: somepassword
+db_port: 9452
+
+# postgresql docker
+pg_docker_container_name: compojure-skeleton-postgres
+pg_docker_port: "{{db_port}}"
+pg_docker_password: "{{db_password}}"
 
 # virtualenv
 virtualenv_user: "{{project_user}}"
