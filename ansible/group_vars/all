@@ -14,8 +14,8 @@ out_dirs:
   - "{{project_dir}}/src/config"            # clj config
 
 # database
-db_name: "{{project_name}}"
-db_user: "{{project_user}}"
+db_name: postgres
+db_user: postgres
 db_host: localhost
 db_password: somepassword
 db_port: 9452

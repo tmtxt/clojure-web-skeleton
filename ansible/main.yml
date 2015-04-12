@@ -8,6 +8,7 @@
     - postgres_client
     - docker_ubuntu
     - postgres_docker
+    - schemup_docker
 
   tasks:
     # create necessary directory

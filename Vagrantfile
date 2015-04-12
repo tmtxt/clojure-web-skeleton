@@ -30,8 +30,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       project_dir: "/vagrant",
 
       # db
-      db_name: project_user,
-      db_user: project_user,
       db_password: "vagrant",
       db_port: db_port,
 
