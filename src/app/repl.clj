@@ -3,6 +3,7 @@
         ring.server.standalone
         [ring.middleware file-info file])
   (:require [clojure.tools.nrepl.server :as repl-server]
+            [cemerick.piggieback :refer [wrap-cljs-repl]]
             [config.main :refer [config]]))
 
 (defonce server (atom nil))
@@ -37,5 +38,6 @@
   (reset! server nil))
 
 (defn start-repl []
-  (repl-server/start-server :port (config :nrepl-port))
+  (repl-server/start-server :port (config :nrepl-port)
+                            :handler (repl-server/default-handler #'wrap-cljs-repl))
   (println (str "nRepl server running on port " (config :nrepl-port))))
